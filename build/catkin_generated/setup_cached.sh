@@ -7,8 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/cristina/SOFAR/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/cristina/SOFAR/devel/lib:$LD_LIBRARY_PATH"
 export PWD='/home/cristina/SOFAR/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/cristina/SOFAR/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/cristina/SOFAR/src:$ROS_PACKAGE_PATH"

@@ -1,4 +1,4 @@
-image: my_map1.pgm
+image: myworld.pgm
 resolution: 0.050000
 origin: [-10.525000, -10.525000, 0.000000]
 negate: 0

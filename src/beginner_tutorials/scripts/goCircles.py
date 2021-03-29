@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # A very basic TurtleBot script that moves TurtleBot forward indefinitely. Press CTRL + C to stop.  To run:
 # On TurtleBot:
 # roslaunch turtlebot_bringup minimal.launch

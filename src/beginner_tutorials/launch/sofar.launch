@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+<node name="goalRoom" pkg="beginner_tutorials" type="goalRoom.py" />
+
+<node name="pathPlanning" pkg="beginner_tutorials" type="pathPlanning.py"/>
+
+<node name="goToPoint" pkg="beginner_tutorials" type="goToSpecificPoint.py"/>
+
+<node name="goCircles" pkg="beginner_tutorials" type="goCircles.py"/>
+
+
+</launch>

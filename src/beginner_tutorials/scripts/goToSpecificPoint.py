@@ -108,7 +108,7 @@ if __name__ == '__main__':
         #subscribe from room topic and get the goal room id
 	navigator = GoToPose()
         # Customize the following values so they are appropriate for your location
-        position = {'x': -3.55, 'y' : -0.457}
+        position = {'x': 3.12, 'y' : -3.92}
         quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}
 
         rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])

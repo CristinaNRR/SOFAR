@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
     ar_follower.py - Version 1.0 2013-08-25
     
@@ -28,7 +30,7 @@ from math import copysign
 
 class ARFollower():
     def __init__(self):
-        rospy.init_node("ar_follower")
+        rospy.init_node("pathPlanning")
                         
         # Set the shutdown function (stop the robot)
         rospy.on_shutdown(self.shutdown)
@@ -97,6 +99,7 @@ class ARFollower():
         # controllo se tutti e 3 i flag sono true, se no non faccio nulla
         while not rospy.is_shutdown():
 	    #rospy.loginfo('4')
+	    #print(self.id_marker)
 	    if (self.flag_marker==True and self.flag_rot==True and self.flag_room==True):
             	#rospy.loginfo('we are ready!')
                 if(self.room_id == self.id_marker):
@@ -147,7 +150,7 @@ class ARFollower():
       
 	#save id of the detected marker
 	self.id_marker = str(marker.id)
-	#print(id_marker)
+	print(self.id_marker)
         
      
       
