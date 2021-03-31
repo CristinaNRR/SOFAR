@@ -100,6 +100,8 @@ class ARFollower():
         while not rospy.is_shutdown():
 	    #rospy.loginfo('4')
 	    #print(self.id_marker)
+	    if(self.flag_marker==True):
+			rospy.loginfo('you are in room %s', self.id_marker)
 	    if (self.flag_marker==True and self.flag_rot==True and self.flag_room==True):
             	#rospy.loginfo('we are ready!')
                 if(self.room_id == self.id_marker):
@@ -107,7 +109,7 @@ class ARFollower():
 			
 		else:
 			#activate the goToSpecificPoint node
-			msg = 'Go'
+			msg = self.room_id
 			pub = rospy.Publisher('go_to_room', String, queue_size=10)
 			pub.publish(msg)	
 			print(msg)

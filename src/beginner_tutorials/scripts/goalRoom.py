@@ -45,7 +45,7 @@ def goalRoom():
     rate = rospy.Rate(1) # 10hz
     while not rospy.is_shutdown():
 #set manually the id of the desired goal room
-        room_id = '2'
+        room_id = '1'
 	if(room_id=='0' or room_id=='1' or room_id=='2'):
         	rospy.loginfo('sending the goal room..')
         	pub.publish(room_id)

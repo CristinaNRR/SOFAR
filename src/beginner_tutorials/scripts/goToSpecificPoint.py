@@ -32,7 +32,7 @@ class GoToPose():
 	#subscribe to ar track and when it detects a marker i save the marker id
 	#rospy.Subscriber('parla', String, self.callback)
 	#rospy.Subscriber('ar_pose_marker', AlvarMarkers, self.set_cmd_vel)
-        self.goal_sent = False
+	self.goal_sent = False
 
 	# What to do if shut down (e.g. Ctrl-C or failure)
 	rospy.on_shutdown(self.shutdown)
@@ -43,10 +43,47 @@ class GoToPose():
 
 	# Allow up to 5 seconds for the action server to come up
 	self.move_base.wait_for_server(rospy.Duration(5))
+        rospy.Subscriber('go_to_room', String, self.callback)
+	while(1):
+		pass
 
-   # def callback(self, data):
+
+
+
+
+
+    def callback(self,data):
      	
-	#self.room_id = data.data
+	room_id = data.data
+	#navigator = self.callback2()
+        # Customize the following values so they are appropriate for your location
+	if(room_id == '2'):
+        	position = {'x': 3.12, 'y' : -3.92}
+        	quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}
+	elif(room_id=='0'):
+        	position = {'x': -1.28, 'y' : 0.934}
+        	quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}	
+	elif(room_id=='1'):
+        	position = {'x': -3.84, 'y' : -4.19}
+        	quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}		
+
+        rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
+       # success = navigator.goto(position, quaternion)
+	success = self.goto(position, quaternion)
+
+	#if (self.id_marker==self.room_id):
+	#	rospy.loginfo("we reached the goal room!")
+			
+    #    if success:
+     #       rospy.loginfo("We reached the desired pose")
+	   # if (self.id_marker == self.room_id):
+		#rospy.loginfo("great")
+	   
+#        else:
+ #           rospy.loginfo("The base failed to reach the desired pose")
+
+        # Sleep to give the last log messages time to be sent
+        #rospy.sleep(1)
 	
 
   #  def set_cmd_vel(self, msg):
@@ -103,31 +140,13 @@ if __name__ == '__main__':
     try:
         rospy.init_node('nav_test', anonymous=False)
 	#wait for room topic to proceed
-	rospy.loginfo("Waiting for room topic...")
-        rospy.wait_for_message('go_to_room', String)
+	GoToPose()
+        rospy.spin()
+        #rospy.Subscriber('go_to_room', String, callback)
+	#rospy.loginfo("Waiting for room topic...")
+        #rospy.wait_for_message('go_to_room', String)
         #subscribe from room topic and get the goal room id
-	navigator = GoToPose()
-        # Customize the following values so they are appropriate for your location
-        position = {'x': 3.12, 'y' : -3.92}
-        quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}
-
-        rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
-        success = navigator.goto(position, quaternion)
-
-	#if (self.id_marker==self.room_id):
-	#	rospy.loginfo("we reached the goal room!")
-			
-        if success:
-            rospy.loginfo("We reached the desired pose")
-	   # if (self.id_marker == self.room_id):
-		#rospy.loginfo("great")
-	   
-        else:
-            rospy.loginfo("The base failed to reach the desired pose")
-
-        # Sleep to give the last log messages time to be sent
-        rospy.sleep(1)
+	
 
     except rospy.ROSInterruptException:
         rospy.loginfo("Ctrl-C caught. Quitting")
-
