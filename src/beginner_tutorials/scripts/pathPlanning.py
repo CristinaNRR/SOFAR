@@ -79,7 +79,7 @@ class ARFollower():
 	self.flag_rot=False
 	self.flag_room=False
 	self.flag_marker=False
-	 
+	self.count = 0
         
         # Set flag to indicate when the AR marker is visible
         self.target_visible = False
@@ -104,6 +104,10 @@ class ARFollower():
 			rospy.loginfo('you are in room %s', self.id_marker)
 	    if (self.flag_marker==True and self.flag_rot==True and self.flag_room==True):
             	#rospy.loginfo('we are ready!')
+		if (self.count == 1):
+			self.flag_marker=False
+			self.flag_room=False
+		self.count = self.count + 1
                 if(self.room_id == self.id_marker):
 			rospy.loginfo('you are in the goal room!')
 			
@@ -111,8 +115,9 @@ class ARFollower():
 			#activate the goToSpecificPoint node
 			msg = self.room_id
 			pub = rospy.Publisher('go_to_room', String, queue_size=10)
-			pub.publish(msg)	
-			print(msg)
+			pub.publish(msg)
+			rospy.loginfo('moving the robot to room %s', self.room_id)	
+			#print(msg)
        
             
             # Sleep for 1/self.rate seconds
@@ -138,6 +143,7 @@ class ARFollower():
 	   # flag_marker = True
             if not self.target_visible:
                 rospy.loginfo("FOLLOWER is Tracking Target!")
+		self.count=0
                 #global flag_marker 
 		self.flag_marker= True
             self.target_visible = True
@@ -152,7 +158,8 @@ class ARFollower():
       
 	#save id of the detected marker
 	self.id_marker = str(marker.id)
-	print(self.id_marker)
+	#print(self.id_marker)
+       # rospy.loginfo("sono nella callback")
         
      
       
