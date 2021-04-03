@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-<node name="goalRoom" pkg="beginner_tutorials" type="goalRoom.py" />
+<!--<node name="goalRoom" pkg="beginner_tutorials" type="goalRoom.py" />-->
 
 <node name="pathPlanning" pkg="beginner_tutorials" type="pathPlanning.py" output="screen" />
 

@@ -110,6 +110,8 @@ class ARFollower():
 		self.count = self.count + 1
                 if(self.room_id == self.id_marker):
 			rospy.loginfo('you are in the goal room!')
+			self.flag_marker=True
+			self.count=0
 			
 		else:
 			#activate the goToSpecificPoint node
@@ -131,6 +133,7 @@ class ARFollower():
     def get_room_id (self, data):
     	self.room_id= data.data
 	self.flag_room=True
+	#print(room_id)
     	#rospy.loginfo('Go to room %s', room_id)
 
 
