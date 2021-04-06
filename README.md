@@ -174,9 +174,9 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Isabella-Sole Bisio  - S4113265@studenti.unige.it
-Cristina Naso Rappis - S4378585@studenti.unige.it
-Serena Roncagliolo . S4233330@studenti.unige.it
+* Isabella-Sole Bisio  - S4113265@studenti.unige.it
+* Cristina Naso Rappis - S4378585@studenti.unige.it
+* Serena Roncagliolo . S4233330@studenti.unige.it
 
 
 Project Link: [https://github.com/CristinaNRR/SOFAR.git](https://github.com/CristinaNRR/SOFAR.git)
