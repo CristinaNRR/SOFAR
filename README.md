@@ -84,24 +84,57 @@ The *TurtleBot3 Simulation* package requires *turtlebot3* and *turtlebot3_msgs* 
       $ sudo apt-get install ros-kinetic-turtlebot3-msgs
       $ sudo apt-get install ros-kinetic-turtlebot3   
     ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+### Ar_track_alvar package
+Th [ar_track_alvar package](http://wiki.ros.org/ar_track_alvar) is a ROS wrapper for [Alvar](http://virtual.vtt.fi/virtual/proj2/multimedia/index.html), an open source AR tag tracking library.
+* Install the ar\_track\_alvar package:
+  ```sh
+      $ sudo apt-get install ros-indigo-ar-track-alvar
+   ```
+### AR tags in Gazebo
+It is necessary to generate gazebo models for the AR tags. We use the following [repository](\url{https://github.com/mikaelarguedas/gazebo_models}) to do so.
+* Clone the required repository:
+  ```sh
+     $ git clone https://github.com/mikaelarguedas/gazebo_models.git
+   ```
+* Generate AR tags:
+ ```sh
+    $ ./generate_markers_model.py -i IMAGE_DIRECTORY -s 1000 -w 500
+ ```
+ 
+## How to run the project
+This instructions assumes that you have installed **catkin**, if not it is necessary to follow the instruction at [catkin installation](https://wiki.ros.org/catkin#Installing_catkin). After installation source the environment:
+ ```sh
+ $ source /opt/ros/kinetic/setup.bash
+ ```
+1. Clone the repository 
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   $ git clone https://github.com/CristinaNRR/SOFAR.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+2. Run the commands
+  ```sh
+   $ catkin_make
+   $ source devel/setup.bash
    ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
+3. You need to make sure that every node has the permission of execution. To do so, enter the folder *scripts* inside the package *beginner\_tutorials* and run the command line:
+```sh
+$ chmod +x filename.py
+```
+4. Launch the world in Gazebo, open a new terminal and execute the command below:
+```sh
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=home/user/catkin_ws/turtlebot_custom_gazebo_worlds/myworld.world 
+```
+5. Run the yaml file that contains the map of the world:
+```sh
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=home/user/catkin_ws/turtlebot_custom_maps/myworld.yaml
+```  
+6. Bring up the ArTrack node:
+```sh
+$ roslaunch beginner_tutorial tags.launch
+``` 
+7. Run all the remaining nodes
+```sh
+$ roslaunch beginner_tutorial sofar.launch
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
