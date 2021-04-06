@@ -50,7 +50,7 @@
 
 The objective of this work is to implement behaviours based on communicable commandsthrough a mobile based interface deployed in a set up which simulate rooms of an apartment.
 The project originally involved the use of the robot [MiRo-E](https://www.miro-e.com/robot), developed by [Consequential Robotics](http://consequentialrobotics.com/). 
-Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Unfortunately, MiRo does not have a laser-scanner on it, but it uses stereo-vision. Since our project involves the building of the environment map, we could not use the MiRo simulation model  found  that since its stereo-vision  is  not  capable  of  performing  this  operation.  This failure is caused by the overlap between the left-eye-camera and right-eye-camera, which is very small, therefore depth information is limited and insufficient.We decided instead to use theTurtlebot robotto be able to build the map and navigate within it.
+Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Unfortunately, MiRo does not have a laser-scanner on it, but it uses stereo-vision. Since our project involves the building of the environment map, we could not use the MiRo simulation model  found  that since its stereo-vision  is  not  capable  of  performing  this  operation.  This failure is caused by the overlap between the left-eye-camera and right-eye-camera, which is very small, therefore depth information is limited and insufficient. We decided instead to use theTurtlebot robotto be able to build the map and navigate within it.
 
 ### Built With
 
@@ -61,19 +61,29 @@ The project was built using:
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- PREREQUISITES -->
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Prerequisites
 
-### Prerequisites
+### Ros
+this project is developed using [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu). Follow [instructions](http://wiki.ros.org/kinetic/Installation/Ubuntu) for installation.
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+### Gazebo
+this project is developed using [Gazebo 7.3.0](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1). Follow [instructions](http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b1) for installation.
+
+### Turtlebot3 
+The *TurtleBot3 Simulation* package requires *turtlebot3* and *turtlebot3_msgs* packages as prerequisite. 
+
+* Install Dependent ROS 1 Packages:
   ```sh
-  npm install npm@latest -g
+  $ sudo apt-get install ros-kinetic-joy ros-kinetic-teleop-twist-joy \ ros-kinetic-teleop-twist-keyboard ros-kinetic-laser-proc \ ros-kinetic-rgbd-launch ros-kinetic-depthimage-to-laserscan \ ros-kinetic-rosserial-arduino ros-kinetic-rosserial-python \ ros-kinetic-rosserial-server ros-kinetic-rosserial-client \ ros-kinetic-rosserial-msgs ros-kinetic-amcl ros-kinetic-map-server \ ros-kinetic-move-base ros-kinetic-urdf ros-kinetic-xacro \ ros-kinetic-compressed-image-transport ros-kinetic-rqt* \ ros-kinetic-gmapping ros-kinetic-navigation ros-kinetic-interactive-markers
   ```
+ *  Install TurtleBot3 Packages
+    ```sh
+      $ sudo apt-get install ros-kinetic-dynamixel-sdk
+      $ sudo apt-get install ros-kinetic-turtlebot3-msgs
+      $ sudo apt-get install ros-kinetic-turtlebot3   
+    ```
 
 ### Installation
 
