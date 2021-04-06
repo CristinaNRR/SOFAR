@@ -174,9 +174,12 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Isabella-Sole Bisio  - S4113265@studenti.unige.it
+Cristina Naso Rappis - S4378585@studenti.unige.it
+Serena Roncagliolo . S4233330@studenti.unige.it
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+Project Link: [https://github.com/CristinaNRR/SOFAR.git](https://github.com/CristinaNRR/SOFAR.git)
 
 
 
