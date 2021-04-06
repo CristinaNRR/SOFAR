@@ -165,8 +165,8 @@ Contributions are what make the open source community such an amazing place to b
 
 
 
-<!-- LICENSE -->
-## License
+<!-- LICENSE 
+## License -->
 
 
 
@@ -183,7 +183,7 @@ Project Link: [https://github.com/CristinaNRR/SOFAR.git](https://github.com/Cris
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
+<!-- ACKNOWLEDGEMENTS 
 ## Acknowledgements
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
@@ -195,7 +195,8 @@ Project Link: [https://github.com/CristinaNRR/SOFAR.git](https://github.com/Cris
 * [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 * [Sticky Kit](http://leafo.net/sticky-kit)
 * [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+* [Font Awesome](https://fontawesome.com)-->
+
 
 
 
