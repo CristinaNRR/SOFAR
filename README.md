@@ -88,7 +88,8 @@ The *TurtleBot3 Simulation* package requires *turtlebot3* and *turtlebot3_msgs* 
 Th [ar_track_alvar package](http://wiki.ros.org/ar_track_alvar) is a ROS wrapper for [Alvar](http://virtual.vtt.fi/virtual/proj2/multimedia/index.html), an open source AR tag tracking library.
 * Install the ar\_track\_alvar package:
   ```sh
-      $ sudo apt-get install ros-indigo-ar-track-alvar
+      $ sudo apt-get install ros-kinetic-ar-track-alvar
+      $ sudo apt-get install ros-kinetic-ar-track-alvar-msgs
    ```
 ### AR tags in Gazebo
 It is necessary to generate gazebo models for the AR tags. We use the following [repository](\url{https://github.com/mikaelarguedas/gazebo_models}) to do so.
