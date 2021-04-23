@@ -24,6 +24,7 @@
 import rospy
 from std_msgs.msg import Bool
 from std_msgs.msg import String
+from std_msgs.msg import Int32
 from ar_track_alvar_msgs.msg import AlvarMarkers
 from geometry_msgs.msg import Twist
 from math import copysign
@@ -86,7 +87,11 @@ class ARFollower():
 	#subscribe to know when robot finish rotating
 	rospy.Subscriber('finish_rotating', Bool, self.rotation)
         #subscribe to topic parla to have the goal room
-        rospy.Subscriber('goal_id', String, self.get_room_id)
+        rospy.Subscriber('topicPathPlanner_IdGoal', Int32, self.get_room_id)
+	#publish to go_to_room topic of "motion" node the id of the goal room
+	motion_pub = rospy.Publisher('go_to_room', String, queue_size=10)
+	#publish to x topic of GUI node the id of the current room
+	GUI_pub = rospy.Publisher('topicPathPlanner_IdNow', Int32, queue_size=10)
         # Wait for the ar_pose_marker topic to become available
         rospy.loginfo("Waiting for ar_pose_marker topic...")
         rospy.wait_for_message('ar_pose_marker', AlvarMarkers)
@@ -102,6 +107,8 @@ class ARFollower():
 	    #print(self.id_marker)
 	    if(self.flag_marker==True):
 			rospy.loginfo('you are in room %s', self.id_marker)
+			self.marker2=int(self.id_marker)
+			GUI_pub.publish(self.marker2)
 	    if (self.flag_marker==True and self.flag_rot==True and self.flag_room==True):
             	#rospy.loginfo('we are ready!')
 		if (self.count == 1):
@@ -116,8 +123,7 @@ class ARFollower():
 		else:
 			#activate the goToSpecificPoint node
 			msg = self.room_id
-			pub = rospy.Publisher('go_to_room', String, queue_size=10)
-			pub.publish(msg)
+			motion_pub.publish(msg)
 			rospy.loginfo('moving the robot to room %s', self.room_id)	
 			#print(msg)
        
@@ -131,7 +137,8 @@ class ARFollower():
 
 
     def get_room_id (self, data):
-    	self.room_id= data.data
+    	self.room= data.data
+	self.room_id=str(self.room)
 	self.flag_room=True
 	#print(room_id)
     	#rospy.loginfo('Go to room %s', room_id)
@@ -139,13 +146,13 @@ class ARFollower():
 
     def set_cmd_vel(self, msg):
 
-	#rospy.loginfo('2')
+	#if the marker is detected
         try:
             marker = msg.markers[0]
 	   # rospy.loginfo('2.1')
 	   # flag_marker = True
             if not self.target_visible:
-                rospy.loginfo("FOLLOWER is Tracking Target!")
+                rospy.loginfo("Marker detected")
 		self.count=0
                 #global flag_marker 
 		self.flag_marker= True
