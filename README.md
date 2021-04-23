@@ -48,9 +48,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this work is to implement behaviours based on communicable commandsthrough a mobile based interface deployed in a set up which simulate rooms of an apartment.
+The objective of this work is to implement behaviours based on communicable commands through a graphic interface deployed in a set up which simulate rooms of an apartment.
 The project originally involved the use of the robot [MiRo-E](https://www.miro-e.com/robot), developed by [Consequential Robotics](http://consequentialrobotics.com/). 
-Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Unfortunately, MiRo does not have a laser-scanner on it, but it uses stereo-vision. Since our project involves the building of the environment map, we could not use the MiRo simulation model  found  that since its stereo-vision  is  not  capable  of  performing  this  operation.  This failure is caused by the overlap between the left-eye-camera and right-eye-camera, which is very small, therefore depth information is limited and insufficient. We decided instead to use theTurtlebot robotto be able to build the map and navigate within it.
+Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Since, MiRo does not have cameras based on laser-scanner on it, but it only uses stereo-vision, we decided, together with our supervisors, to use a simulated model of the TurtleBot3 robot. This way we were able to build a map of the environment and navigate within it.
 
 ### Built With
 
@@ -58,7 +58,6 @@ The project was built using:
 * [Ubuntu 16.04 LTS](https://releases.ubuntu.com/16.04/)
 * [ROS Kinetic](http://wiki.ros.org/kinetic)
 * [Gazebo 7.3.0](http://gazebosim.org/tutorials?cat=install&tut=install_other_linux&ver=5.0)
-
 
 
 <!-- PREREQUISITES -->
@@ -101,6 +100,9 @@ It is necessary to generate gazebo models for the AR tags. We use the following 
  ```sh
     $ ./generate_markers_model.py -i IMAGE_DIRECTORY -s 1000 -w 500
  ```
+### Qt creator
+To run the GUI, it is required a priori setup of the environment is required; the interface developed in Qt Creator is connected to the ROS workspace, to easily pass the variable’s parameters from one side to the other.  
+Follow the tutorial’s step _How to Install (Developers)_,that can be found at this [link](https://ros-qtc-plugin.readthedocs.io/en/latest/)
  
 ## How to run the project
 This instructions assumes that you have installed **catkin**, if not it is necessary to follow the instruction at [catkin installation](https://wiki.ros.org/catkin#Installing_catkin). After installation source the environment:
