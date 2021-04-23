@@ -102,7 +102,7 @@ It is necessary to generate gazebo models for the AR tags. We use the following 
  ```
 ### Qt creator
 To run the GUI, it is required a priori setup of the environment is required; the interface developed in Qt Creator is connected to the ROS workspace, to easily pass the variable’s parameters from one side to the other.  
-Follow the tutorial’s step _How to Install (Developers)_,that can be found at this [link](https://ros-qtc-plugin.readthedocs.io/en/latest/)
+Follow the tutorial’s step _How to Install (Developers)_, that can be found at this [link](https://ros-qtc-plugin.readthedocs.io/en/latest/).
  
 ## How to run the project
 This instructions assumes that you have installed **catkin**, if not it is necessary to follow the instruction at [catkin installation](https://wiki.ros.org/catkin#Installing_catkin). After installation source the environment:
@@ -122,13 +122,13 @@ This instructions assumes that you have installed **catkin**, if not it is neces
 ```sh
 $ chmod +x filename.py
 ```
-4. Launch the world in Gazebo, open a new terminal and execute the command below:
+4. Launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user and give the correct path**
 ```sh
-$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=home/user/catkin_ws/turtlebot_custom_gazebo_worlds/myworld.world 
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user>/catkin_ws/turtlebot_custom_gazebo_worlds/myworld.world 
 ```
 5. Run the yaml file that contains the map of the world:
 ```sh
-$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=home/user/catkin_ws/turtlebot_custom_maps/myworld.yaml
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=home/<user>/catkin_ws/turtlebot_custom_maps/myworld.yaml
 ```  
 6. Bring up the ArTrack node:
 ```sh
