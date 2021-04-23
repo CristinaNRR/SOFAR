@@ -12,7 +12,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Symbolic-based Path Planning inSimulated Smart Environment</h3>
+  <h3 align="center">Symbolic-based Path Planning in Simulated Smart Environment</h3>
 </p>
 
 
