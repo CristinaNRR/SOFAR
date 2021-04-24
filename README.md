@@ -168,7 +168,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 ## Usage example
-A video showing how our architecture works in real time can be found at the following [link]()
+A video showing how our architecture works in real time can be found at the following [link](https://web.microsoftstream.com/video/88b366d0-e41a-4384-8d0e-3f2e8e558d53)
 
 ## Report
 
