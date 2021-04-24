@@ -129,8 +129,9 @@ This instructions assumes that you have installed **catkin**, if not it is neces
    ```sh
    $ git clone https://github.com/CristinaNRR/SOFAR.git
    ```
-2. Run the commands
+2. Run the commands. 
   ```sh
+   $cd SOFAR
    $ catkin_make
    $ source devel/setup.bash
    ```
@@ -138,19 +139,23 @@ This instructions assumes that you have installed **catkin**, if not it is neces
 ```sh
 $ chmod +x filename.py
 ```
-4. Launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user and give the correct path**
+4. Open a new terminal, launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user and give the correct path**
 ```sh
-$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user>/catkin_ws/turtlebot_custom_gazebo_worlds/myworld.world 
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user>/SOFAR/turtlebot_custom_gazebo_worlds/myworld.world 
 ```
-5. Run the yaml file that contains the map of the world:
+5. Open a new terminal, run the yaml file that contains the map of the world:
 ```sh
-$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=home/<user>/catkin_ws/turtlebot_custom_maps/myworld.yaml
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/<user>/SOFAR/turtlebot_custom_maps/myworld.yaml
 ```  
-6. Bring up the ArTrack node:
+6. Open a new terminal, bring up the ArTrack node:
 ```sh
 $ roslaunch beginner_tutorial tags.launch
 ``` 
-7. Run all the remaining nodes
+7. Open a new terminal, open the GUI:
+```sh
+$ rosrun sofar_isa sofar_isa_node
+``` 
+9.  Open a new terminal and run all the remaining nodes
 ```sh
 $ roslaunch beginner_tutorial sofar.launch
 ```
@@ -162,6 +167,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
+##Usage example
+A video showing how our architecture works in real time can be found at the following [link]()
 
 
 <!-- ROADMAP 
