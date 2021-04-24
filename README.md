@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this work is to implement behaviours based on communicable commands through a graphic interface deployed in a set up which simulate rooms of an apartment.
+The objective of this work is to simulate in Gazebo a three rooms apartment and use the Turtlebot robot to navigate it, relying on a priori knowledge of the map of the environment.
 The project originally involved the use of the robot [MiRo-E](https://www.miro-e.com/robot), developed by [Consequential Robotics](http://consequentialrobotics.com/). 
 Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Since, MiRo does not have cameras based on laser-scanner on it, but it only uses stereo-vision, we decided, together with our supervisors, to use a simulated model of the TurtleBot3 robot. This way we were able to build a map of the environment and navigate within it.
 
