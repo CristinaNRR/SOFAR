@@ -50,7 +50,7 @@
 
 The objective of this work is to simulate in Gazebo a three rooms apartment and use the Turtlebot robot to navigate it, relying on a priori knowledge of the map of the environment.
 The project originally involved the use of the robot [MiRo-E](https://www.miro-e.com/robot), developed by [Consequential Robotics](http://consequentialrobotics.com/). 
-Due to the COVID-19 health emergency, we had to work on a simulated model of the MiRo-E robot.  Since, MiRo does not have cameras based on laser-scanner on it, but it only uses stereo-vision, we decided, together with our supervisors, to use a simulated model of the TurtleBot3 robot. This way we were able to build a map of the environment and navigate within it.
+In agreement with our tutors, due to the COVID-19 health emergency, we decided to work on a simulated model of TurtleBot3 robot.  The MiRo robot is not equipped with based laser-scanner cameras, but it only uses stereo-vision. This way we were able to build in advance a map of the environment and use it to navigate the simulated apartment.
 
 ### Built With
 
@@ -101,8 +101,24 @@ It is necessary to generate gazebo models for the AR tags. We use the following 
     $ ./generate_markers_model.py -i IMAGE_DIRECTORY -s 1000 -w 500
  ```
 ### Qt creator
-To run the GUI, it is required a priori setup of the environment is required; the interface developed in Qt Creator is connected to the ROS workspace, to easily pass the variable’s parameters from one side to the other.  
+To run the Graphical User Interface (GUI), it is required a specific setup of the environment. The GUI developed in Qt Creator is connected to the ROS workspace, to easily pass the variable’s parameters from one side to the other.  
 Follow the tutorial’s step _How to Install (Developers)_, that can be found at this [link](https://ros-qtc-plugin.readthedocs.io/en/latest/).
+At the following [link](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/Improve-ROS-Qt-Creator-Plugin-Developers-ONLY.html) follow the instruction _Installation Procedure for Ubuntu 16.04_ and _Configure system to use the new version of Qt_ as follow:
+1. Installation Procedure for Ubuntu 16.04
+ ```sh
+sudo add-apt-repository ppa:levi-armstrong/qt-libraries-xenial
+sudo add-apt-repository ppa:levi-armstrong/ppa
+sudo apt-get update && sudo apt-get install qt57creator-plugin-ros libqtermwidget57-0-dev
+ ```
+ 2. Run this command to tell _qtchooser_ where to find this install opening the file _default.conf_ 
+  ```sh
+sudo gedit /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
+ ```
+ 3. Add the following lines in the file:
+  ```sh
+ /opt/qt57/bin
+ /opt/qt57/lib
+ ```
  
 ## How to run the project
 This instructions assumes that you have installed **catkin**, if not it is necessary to follow the instruction at [catkin installation](https://wiki.ros.org/catkin#Installing_catkin). After installation source the environment:
