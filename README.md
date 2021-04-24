@@ -139,7 +139,7 @@ This instructions assumes that you have installed **catkin**, if not it is neces
 ```sh
 $ chmod +x filename.py
 ```
-4. Open a new terminal, launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user and give the correct path**
+4. Open a new terminal, launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user name and give the correct path**
 ```sh
 $ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user>/SOFAR/turtlebot_custom_gazebo_worlds/myworld.world 
 ```
