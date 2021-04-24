@@ -167,9 +167,8 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
-##Usage example
+## Usage example
 A video showing how our architecture works in real time can be found at the following [link]()
-
 
 <!-- ROADMAP 
 ## Roadmap
