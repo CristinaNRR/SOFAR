@@ -170,6 +170,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_ --
 ## Usage example
 A video showing how our architecture works in real time can be found at the following [link]()
 
+## Report
+
+The report was added to the Google Drive link shared on Slack at the [link]()
+
 <!-- ROADMAP 
 ## Roadmap
 
