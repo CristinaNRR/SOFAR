@@ -149,7 +149,7 @@ $ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/<user>/SOFAR/turtl
 ```  
 6. Open a new terminal, bring up the ArTrack node:
 ```sh
-$ roslaunch beginner_tutorial tags.launch
+$ roslaunch beginner_tutorials tags.launch
 ``` 
 7. Open a new terminal, open the GUI:
 ```sh
@@ -157,7 +157,7 @@ $ rosrun sofar_isa sofar_isa_node
 ``` 
 9.  Open a new terminal and run all the remaining nodes
 ```sh
-$ roslaunch beginner_tutorial sofar.launch
+$ roslaunch beginner_tutorials sofar.launch
 ```
 
 <!-- USAGE EXAMPLES 
