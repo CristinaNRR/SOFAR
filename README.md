@@ -106,13 +106,13 @@ Follow the tutorial’s step _How to Install (Developers)_, that can be found at
 At the following [link](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/Improve-ROS-Qt-Creator-Plugin-Developers-ONLY.html) follow the instruction _Installation Procedure for Ubuntu 16.04_ and _Configure system to use the new version of Qt_ as follow:
 1. Installation Procedure for Ubuntu 16.04
  ```sh
-sudo add-apt-repository ppa:levi-armstrong/qt-libraries-xenial
-sudo add-apt-repository ppa:levi-armstrong/ppa
-sudo apt-get update && sudo apt-get install qt57creator-plugin-ros libqtermwidget57-0-dev
+$ sudo add-apt-repository ppa:levi-armstrong/qt-libraries-xenial
+$ sudo add-apt-repository ppa:levi-armstrong/ppa
+$ sudo apt-get update && sudo apt-get install qt57creator-plugin-ros libqtermwidget57-0-dev
  ```
  2. Run this command to tell _qtchooser_ where to find this install opening the file _default.conf_ 
   ```sh
-sudo gedit /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
+$ sudo gedit /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf
  ```
  3. Add the following lines in the file:
   ```sh
@@ -126,15 +126,15 @@ This instructions assumes that you have installed **catkin**, if not it is neces
  $ source /opt/ros/kinetic/setup.bash
  ```
 1. Clone the repository 
-   ```sh
-   $ git clone https://github.com/CristinaNRR/SOFAR.git
-   ```
+ ```sh
+ $ git clone https://github.com/CristinaNRR/SOFAR.git
+ ```
 2. Run the commands. 
-  ```sh
-   $cd SOFAR
-   $ catkin_make
-   $ source devel/setup.bash
-   ```
+```sh
+ $ cd SOFAR
+ $ catkin_make
+ $ source devel/setup.bash
+ ```
 3. You need to make sure that every node has the permission of execution. To do so, enter the folder *scripts* inside the package *beginner\_tutorials* and run the command line:
 ```sh
 $ chmod +x filename.py
