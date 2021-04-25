@@ -7,7 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/gazebo-7/plugins'
-export PKG_CONFIG_PATH='/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig'
+export CMAKE_PREFIX_PATH="/home/cristina/SOFAR/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/cristina/SOFAR/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/cristina/SOFAR/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/cristina/SOFAR/build'
-export PYTHONPATH='/opt/ros/kinetic/lib/python2.7/dist-packages:/home/cristina/mdk/share:/home/cristina/mdk/share'
+export PYTHONPATH="/home/cristina/SOFAR/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES='/home/cristina/SOFAR/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/cristina/SOFAR/src:$ROS_PACKAGE_PATH"

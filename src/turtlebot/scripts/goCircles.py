@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 
-# A very basic TurtleBot script that moves TurtleBot forward indefinitely. Press CTRL + C to stop.  To run:
-# On TurtleBot:
-# roslaunch turtlebot_bringup minimal.launch
-# On work station:
-# python goforward.py
 
 import rospy
 from std_msgs.msg import Bool
 from geometry_msgs.msg import Twist
 
-class GoForward():
+class GoCircles():
     def __init__(self):
         # initiliaze
         rospy.init_node('GoCircles', anonymous=False)
@@ -63,7 +58,7 @@ class GoForward():
  
 if __name__ == '__main__':
     try:
-        GoForward()
+        GoCircles()
     except:
         rospy.loginfo("GoForward node terminated.")
 

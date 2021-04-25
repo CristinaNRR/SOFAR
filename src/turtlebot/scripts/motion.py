@@ -29,9 +29,7 @@ from ar_track_alvar_msgs.msg import AlvarMarkers
 
 class GoToPose():
     def __init__(self):
-	#subscribe to ar track and when it detects a marker i save the marker id
-	#rospy.Subscriber('parla', String, self.callback)
-	#rospy.Subscriber('ar_pose_marker', AlvarMarkers, self.set_cmd_vel)
+
 	self.goal_sent = False
 
 	# What to do if shut down (e.g. Ctrl-C or failure)
@@ -44,18 +42,14 @@ class GoToPose():
 	# Allow up to 5 seconds for the action server to come up
 	self.move_base.wait_for_server(rospy.Duration(5))
         rospy.Subscriber('go_to_room', String, self.callback)
+
 	while(1):
 		pass
-
-
-
-
 
 
     def callback(self,data):
      	
 	room_id = data.data
-	#navigator = self.callback2()
         # Customize the following values so they are appropriate for your location
 	if(room_id == '2'):
         	position = {'x': 3.12, 'y' : -3.92}
@@ -68,38 +62,7 @@ class GoToPose():
         	quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.000, 'r4' : 1.000}		
 
         rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
-       # success = navigator.goto(position, quaternion)
 	success = self.goto(position, quaternion)
-
-	#if (self.id_marker==self.room_id):
-	#	rospy.loginfo("we reached the goal room!")
-			
-    #    if success:
-     #       rospy.loginfo("We reached the desired pose")
-	   # if (self.id_marker == self.room_id):
-		#rospy.loginfo("great")
-	   
-#        else:
- #           rospy.loginfo("The base failed to reach the desired pose")
-
-        # Sleep to give the last log messages time to be sent
-        #rospy.sleep(1)
-	
-
-  #  def set_cmd_vel(self, msg):
-        # Pick off the first marker (in case there is more than one)
-	#rospy.loginfo('2')
-   #     try:
-    #        marker = msg.markers[0]
-	   # rospy.loginfo('2.1')
-	  #  flag_marker = True
-           #save id of the detected marker
-     #       self.id_marker = marker.id
-     #   except:
-	   # rospy.loginfo('2.2')
-            
-      #      return
-                
  
 
     def goto(self, pos, quat):
@@ -142,10 +105,6 @@ if __name__ == '__main__':
 	#wait for room topic to proceed
 	GoToPose()
         rospy.spin()
-        #rospy.Subscriber('go_to_room', String, callback)
-	#rospy.loginfo("Waiting for room topic...")
-        #rospy.wait_for_message('go_to_room', String)
-        #subscribe from room topic and get the goal room id
 	
 
     except rospy.ROSInterruptException:

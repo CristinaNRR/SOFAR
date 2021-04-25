@@ -103,8 +103,6 @@ class ARFollower():
         
         # controllo se tutti e 3 i flag sono true, se no non faccio nulla
         while not rospy.is_shutdown():
-	    #rospy.loginfo('4')
-	    #print(self.id_marker)
 	    if(self.flag_marker==True):
 			if(self.id_marker=='0'):
 				rospy.loginfo('you are in room 3')
@@ -113,7 +111,6 @@ class ARFollower():
 			self.marker2=int(self.id_marker)
 			GUI_pub.publish(self.marker2)
 	    if (self.flag_marker==True and self.flag_rot==True and self.flag_room==True):
-            	#rospy.loginfo('we are ready!')
 		if (self.count == 1):
 			self.flag_marker=False
 			self.flag_room=False
@@ -133,8 +130,6 @@ class ARFollower():
 			else:
 				rospy.loginfo('moving the robot to room: %s', self.room_id)
 
-	
-			#print(msg)
        
             
             # Sleep for 1/self.rate seconds
@@ -142,15 +137,14 @@ class ARFollower():
 
     def rotation(self, data):
 	self.flag_rot = data.data
-	#print(flag_rot)
+
 
 
     def get_room_id (self, data):
     	self.room= data.data
 	self.room_id=str(self.room)
 	self.flag_room=True
-	#print(room_id)
-    	#rospy.loginfo('Go to room %s', room_id)
+
 
 
     def set_cmd_vel(self, msg):
@@ -158,8 +152,6 @@ class ARFollower():
 	#if the marker is detected
         try:
             marker = msg.markers[0]
-	   # rospy.loginfo('2.1')
-	   # flag_marker = True
             if not self.target_visible:
                 rospy.loginfo("Marker detected")
 		self.count=0
@@ -167,8 +159,6 @@ class ARFollower():
 		self.flag_marker= True
             self.target_visible = True
         except:
-
-	   # rospy.loginfo('2.2')
             
             self.target_visible = False
             
@@ -177,8 +167,6 @@ class ARFollower():
       
 	#save id of the detected marker
 	self.id_marker = str(marker.id)
-	#print(self.id_marker)
-       # rospy.loginfo("sono nella callback")
         
      
       
