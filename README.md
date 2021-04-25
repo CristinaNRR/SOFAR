@@ -172,7 +172,7 @@ A video showing how our architecture works in real time can be found at the foll
 
 ## Report
 
-The report was added to the Google Drive link shared on Slack at the [link](https://drive.google.com/drive/folders/1svPEK-nhk9xKxZpOJx203a_A07jtj6n-?usp=sharing)
+The report was added to the Google Drive [link](https://drive.google.com/drive/folders/1svPEK-nhk9xKxZpOJx203a_A07jtj6n-?usp=sharing) shared on Slack. 
 
 <!-- ROADMAP 
 ## Roadmap
@@ -205,7 +205,7 @@ Contributions are what make the open source community such an amazing place to b
 
 * Isabella-Sole Bisio  - S4113265@studenti.unige.it
 * Cristina Naso Rappis - S4378585@studenti.unige.it
-* Serena Roncagliolo . S4233330@studenti.unige.it
+* Serena Roncagliolo - S4233330@studenti.unige.it
 
 
 Project Link: [https://github.com/CristinaNRR/SOFAR.git](https://github.com/CristinaNRR/SOFAR.git)
