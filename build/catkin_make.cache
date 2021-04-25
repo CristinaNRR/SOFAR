@@ -1,0 +1,2 @@
+sofar_isa:turtlebot
+-DCATKIN_DEVEL_PREFIX=/home/cristina/SOFAR/devel -DCMAKE_INSTALL_PREFIX=/home/cristina/SOFAR/install -G Unix Makefiles

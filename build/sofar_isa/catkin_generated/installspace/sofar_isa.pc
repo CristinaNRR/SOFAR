@@ -1,0 +1,8 @@
+prefix=/home/cristina/SOFAR/install
+
+Name: sofar_isa
+Description: Description of sofar_isa
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -135,21 +135,21 @@ This instructions assumes that you have installed **catkin**, if not it is neces
  $ catkin_make
  $ source devel/setup.bash
  ```
-3. You need to make sure that every node has the permission of execution. To do so, enter the folder *scripts* inside the package *beginner\_tutorials* and run the command line:
+3. You need to make sure that every node has the permission of execution. To do so, enter the folder *scripts* inside the package *turtlebot* and run the command line:
 ```sh
 $ chmod +x filename.py
 ```
 4. Open a new terminal, launch the world in Gazebo, open a new terminal and execute the command below. **N.B. remember to change the user name and give the correct path**
 ```sh
-$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user>/SOFAR/turtlebot_custom_gazebo_worlds/myworld.world 
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/<user_name>/SOFAR/turtlebot_custom_gazebo_worlds/myworld.world 
 ```
 5. Open a new terminal, run the yaml file that contains the map of the world:
 ```sh
-$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/<user>/SOFAR/turtlebot_custom_maps/myworld.yaml
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/<user_name>/SOFAR/turtlebot_custom_maps/myworld.yaml
 ```  
 6. Open a new terminal, bring up the ArTrack node:
 ```sh
-$ roslaunch beginner_tutorials tags.launch
+$ roslaunch turlebot tags.launch
 ``` 
 7. Open a new terminal, open the GUI:
 ```sh
@@ -157,7 +157,7 @@ $ rosrun sofar_isa sofar_isa_node
 ``` 
 9.  Open a new terminal and run all the remaining nodes
 ```sh
-$ roslaunch beginner_tutorials sofar.launch
+$ roslaunch turtlebot sofar.launch
 ```
 
 <!-- USAGE EXAMPLES 

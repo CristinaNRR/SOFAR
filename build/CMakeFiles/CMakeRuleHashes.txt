@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+aaca0a1022b450c12074c31520de360e /home/cristina/SOFAR/devel/share/roseus/ros/turtlebot/manifest.l
+b35ab690e141f9afd4d0930b105f6a59 CMakeFiles/clean_test_results
+fe460bf7d37fc9d22c787155e7f03650 sofar_isa/CMakeFiles/sofar_isa_node_automoc
+fe48fbaa57669a42428e568796251e8e turtlebot/CMakeFiles/turtlebot_generate_messages_eus

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+
+<node name="pathPlanning" pkg="turtlebot" type="pathPlanning.py" output="screen" />
+
+<node name="goToPoint" pkg="turtlebot" type="goToSpecificPoint.py"/>
+
+<node name="goCircles" pkg="turtlebot" type="goCircles.py"/>
+
+
+</launch>
