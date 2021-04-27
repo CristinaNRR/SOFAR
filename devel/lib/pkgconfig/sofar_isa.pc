@@ -1,8 +1,0 @@
-prefix=/home/cristina/SOFAR/devel
-
-Name: sofar_isa
-Description: Description of sofar_isa
-Version: 0.0.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
