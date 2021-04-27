@@ -48,9 +48,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The objective of this work is to simulate in Gazebo a three rooms apartment and use the Turtlebot robot to navigate it, relying on a priori knowledge of the map of the environment.
+The objective of this work is to simulate in Gazebo a three rooms apartment and use the Turtlebot robot to navigate it. In order to move the robot properly we used the MoveBase package that makes use of a map of the environment that we previously built. Furthermore, we used the ar_track_alvar package to 'localize' the robot inside the apartment and check its position. A GUI has been developed and integrated with ROS in order to allow the user to guide the robot around the apartment.
 The project originally involved the use of the robot [MiRo-E](https://www.miro-e.com/robot), developed by [Consequential Robotics](http://consequentialrobotics.com/). 
-In agreement with our tutors, due to the COVID-19 health emergency, we decided to work on a simulated model of TurtleBot3 robot.  The MiRo robot is not equipped with based laser-scanner cameras, but it only uses stereo-vision. This way we were able to build in advance a map of the environment and use it to navigate the simulated apartment.
+In agreement with our tutors, due to the COVID-19 health emergency, we decided to work on a simulated model of TurtleBot3 robot. 
 
 ### Built With
 
