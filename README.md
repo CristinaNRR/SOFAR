@@ -172,7 +172,7 @@ A video showing how our architecture works in real time can be found at the foll
 
 ## Report
 
-The report was added to the Google Drive [link](https://drive.google.com/drive/folders/1svPEK-nhk9xKxZpOJx203a_A07jtj6n-?usp=sharing) shared on Slack. 
+The report was added to the Google Drive [link](https://drive.google.com/file/d/1oqYtF1k-8VqwM-ZNahdicwrmNsQmZCzM/view?usp=sharing) shared on Slack. 
 
 <!-- ROADMAP 
 ## Roadmap
